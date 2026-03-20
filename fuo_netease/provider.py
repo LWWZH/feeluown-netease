@@ -11,6 +11,7 @@ from feeluown.utils.reader import create_reader, SequentialReader
 from .api import API, CodeShouldBe200
 from .login_controller import LoginController
 from .excs import NeteaseIOError
+from .i18n import t
 
 
 logger = logging.getLogger(__name__)
@@ -45,7 +46,7 @@ class NeteaseProvider(AbstractProvider, ProviderV2):
 
     @property
     def name(self):
-        return '网易云音乐'
+        return t('provider-name')
 
     def auto_login(self):
         logger.info("Try auto logging...")
